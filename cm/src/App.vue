@@ -1,4 +1,6 @@
 <template>
+  <h1 class="font-bold flex justify-center text-xl pb-8 ">Input Groups</h1>
+
   <div>
     <form
       action="#"
@@ -73,15 +75,43 @@
       <div>
         <FormSearch></FormSearch>
       </div>
-      
+
       <div>
         <h2>Inputs with shared borders</h2>
       </div>
-
       <div>
         <FormCardAdress></FormCardAdress>
       </div>
     </form>
+  </div>
+
+  <h1 class="font-bold flex justify-center text-xl py-12">Radio Groups</h1>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+    <div>
+      <h2 class="pb-2 border-b-2 bord mb-4 font-medium">Radio - Simple list</h2>
+      <RadioSimpleList></RadioSimpleList>
+    </div>
+    <div>
+      <h2 class="pb-2 border-b-2 bord mb-4 font-medium">Radio - List with description</h2>
+      <RadioListDescroption></RadioListDescroption>
+    </div>
+    <div>
+      <h2 class="pb-2 border-b-2 bord mb-4 font-medium">Radio - List with radio on right</h2>
+      <RadioListRight></RadioListRight>
+    </div>
+    <div>
+      <h2 class="pb-2 border-b-2 bord mb-4 font-medium">Radio - Card</h2>
+      <Card></Card>
+    </div>
+    <div>
+      <h2 class="pb-2 border-b-2 bord mb-4 font-medium">Radio - Simple table</h2>
+      <Table></Table>
+    </div>
+    <div>
+      <h2 class="pb-2 border-b-2 bord mb-4 font-medium">Radio - List with descriptions in panel</h2>
+      <TablePanel></TablePanel>
+    </div>
   </div>
 </template>
 
@@ -95,6 +125,13 @@ import FormNumber from "./components/Form/FormNumber.vue";
 import FormSearch from "./components/Form/FormSearch.vue";
 import FormCardAdress from "./components/Form/FormCardAdress.vue";
 
+import RadioSimpleList from "./components/Radio/RadioSimpleList.vue";
+import RadioListDescroption from "./components/Radio/RadioListDescroption.vue";
+import RadioListRight from "./components/Radio/RadioListRight.vue";
+import Card from "./components/Radio/Card.vue";
+import Table from "./components/Radio/Table.vue";
+import TablePanel from "./components/Radio/TablePanel.vue";
+
 export default {
   components: {
     FormInput,
@@ -105,6 +142,12 @@ export default {
     FormNumber,
     FormSearch,
     FormCardAdress,
+    RadioSimpleList,
+    RadioListDescroption,
+    RadioListRight,
+    Card,
+    Table,
+    TablePanel,
   },
 };
 </script>
