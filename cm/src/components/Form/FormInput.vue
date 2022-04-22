@@ -58,11 +58,11 @@ export default {
       types: ["text", "email"],
     };
   },
-  mounted() {
-    if (!this.types.includes(this.type)) {
-      alert(this.type + " NOT OK");
-    }
-  },
+  // mounted() {
+  //   if (!this.types.includes(this.type)) {
+  //     alert(this.type + " NOT OK");
+  //   }
+  // },
   computed: {
     inputClass: function () {
       return "shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md";
