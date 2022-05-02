@@ -12,7 +12,7 @@
       
       />
     </div>
-   
+    <FormHelpText v-if="helpText" :id="id" :help-text="helpText"></FormHelpText>
 
    
   </div>

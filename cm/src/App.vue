@@ -1,31 +1,60 @@
 <template>
   <nav class="flex justify-center flex-wrap pt-2 border-b-2 pb-4">
-    <div class="px-4 py-2 m-2 border-2 border-blue-300 text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-      <router-link to="/">Inputs</router-link>
+     <div class="button">
+      <router-link to="/testpage">Main Input</router-link>
     </div>
-    <div class="px-4 py-2 m-2  border-2 border-blue-300 text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    <!-- <div class="button">
+      <router-link to="/">Inputs</router-link>
+    </div> -->
+    <div class="button">
       <router-link to="/sidebar">Sidebar</router-link>
     </div>
-    <div class="px-4 py-2 m-2 border-2 border-blue-300 text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    <div class="button">
       <router-link to="/radio">Radio</router-link>
     </div>
-     <div class="px-4 py-2 m-2 border-2 border-blue-300 text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    <div class="button">
       <router-link to="/pageheadings">Page Headings</router-link>
     </div>
-    <div class="px-4 py-2 m-2 border-2 border-blue-300 text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    <div class="button">
       <router-link to="/cardheadings">Card Headings</router-link>
     </div>
-    <div class="px-4 py-2 m-2 border-2 border-blue-300 text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    <div class="button">
       <router-link to="/descriptionslist">Descriptions list</router-link>
     </div>
-     <div class="px-4 py-2 m-2 border-2 border-blue-300 text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    <div class="button">
       <router-link to="/calendar">Calendar</router-link>
     </div>
-       <div class="px-4 py-2 m-2 border-2 border-blue-300 text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    <div class="button">
       <router-link to="/feeds">Feeds</router-link>
     </div>
+    <div class="button">
+      <router-link to="/tables">Tables</router-link>
+    </div>
+    <div class="button">
+      <router-link to="/forms">Forms</router-link>
+    </div>
+    <div class="button">
+      <router-link to="/selectmenus">Select Menus</router-link>
+    </div>
+    <div class="button">
+      <router-link to="/stackedlists">Stacked Lists</router-link>
+    </div>
+    <div class="button">
+      <router-link to="/checkboxes">Checkboxes</router-link>
+    </div>
+    <div class="button">
+      <router-link to="/textareas">Text Areas</router-link>
+    </div>
+    <div class="button">
+      <router-link to="/toggles">Toggles</router-link>
+    </div>
+    <div class="button">
+      <router-link to="/registration">Registration</router-link>
+    </div>
+    <div class="button">
+      <router-link to="/actionpanel">Action Panel</router-link>
+    </div>
   
-
   </nav>
 
   <router-view></router-view>

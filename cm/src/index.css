@@ -1,3 +1,22 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@layer components {
+    .button {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        text-align: center;
+        margin: 4px;
+        font-size: 16px;
+        font-weight: 500;
+        color: rgb(67 56 202);
+        border: 2px solid rgb(99 102 241);
+        border-radius: 6px;
+        background-color: rgb(199 210 254);
+    }
+    .button:hover {
+        background-color: yellow;
+    }
+}
