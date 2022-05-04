@@ -1,13 +1,7 @@
 <template>
-  <nav class="flex justify-center flex-wrap pt-2 border-b-2 pb-4">
+  <!-- <nav class="flex justify-center flex-wrap pt-2 border-b-2 pb-4">
      <div class="button">
       <router-link to="/testpage">Main Input</router-link>
-    </div>
-    <!-- <div class="button">
-      <router-link to="/">Inputs</router-link>
-    </div> -->
-    <div class="button">
-      <router-link to="/sidebar">Sidebar</router-link>
     </div>
     <div class="button">
       <router-link to="/radio">Radio</router-link>
@@ -54,9 +48,24 @@
     <div class="button">
       <router-link to="/actionpanel">Action Panel</router-link>
     </div>
+    <div class="button">
+      <router-link to="/customerpage">Customer Page</router-link>
+    </div>
+    <div class="button">
+      <router-link to="/pagination">Pagination</router-link>
+    </div>
+    <div class="button">
+      <router-link to="/modals">Modals Page</router-link>
+    </div>
+    <div class="button">
+      <router-link to="/dropdowns">Dropdown</router-link>
+    </div>
+    <div class="button">
+      <button @click="$router.push('/newpage')">New Page</button>
+    </div>
   
-  </nav>
-
+  </nav> -->
+  
   <router-view></router-view>
 
   <!-- <h1 class="font-bold flex justify-center text-xl pb-8 ">Input Groups</h1>
@@ -182,6 +191,9 @@
 
 //
 <script>
+
+
+
 // import FormInput from "./components/Form/FormInput.vue";
 // import FormTextArea from "./components/Form/FormTextArea.vue";
 // import FormLabel from "./components/Form/Partials/FormLabel.vue";
