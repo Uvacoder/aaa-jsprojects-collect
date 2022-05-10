@@ -70,28 +70,21 @@
 
     <!-- -------Password error input--------- -->
     <div>
-      <p>Password Error: {{ passworderror }}</p>
+      <!-- <p>Password Error: {{ passworderror }}</p> -->
     </div>
-    <div class="relative">
-      <label>Password error</label>
-      <input
-        name="emailerror"
-        id="emailerror"
-        type="password"
+      <div>
+        <input 
+        type="password" 
+        name="passworderror"
+        id="passworderror"
         required
-        v-model="passworderror"
-        :class="inputClassError"
-        placeholder="Password"
-      />
-      <div v-if="passworderror" class="error">{{ passworderror }} </div>
-      <div class="absolute inset-y-0 right-0 pt-6 pr-3 flex items-center pointer-events-none">
-        <ExclamationCircleIcon
-          class="h-5 w-5 text-red-500"
-          aria-hidden="true"/>
+        v-model="password"
+        placeholder="password"
+        :class="inputClass">
+        
+        <div v-if="passwordError" class="error text-red-600 ">{{ passwordError }}</div>
       </div>
-      <!-- <HelpText /> -->
-    </div>
-
+    
     <!-- -------Text Area--------- -->
     <div>
       <p>Text Area: {{ textarea }}</p>
@@ -311,7 +304,7 @@ export default {
       console.log("password: ", this.password);
       console.log("role: ", this.role);
       console.log("names: ", this.names);
-      this.passworderror = this.password.length > 4 ? '' : 'Your password must be less than 5 characters.'
+      this.passwordError = this.password.length > 5 ? '' : 'Your password must be less than 6 characters.'
     },
   },
 
