@@ -4,14 +4,21 @@
     class="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-8"
   >
     <!-- -------First name input--------- -->
-    <div>
-      
+    <div>   
+    </div>
+    <label for="firstName">First name</label>
+     <div>
     </div>
     <div>
+      <input 
+      type="text"
+      v-model="firsname"
+      placeholder="First Name">
+      
       <BaseInput
         label="First Name"
         type="text"
-        name="fname"
+        name="First_name"
         placeholder="First name"
         required
          />
@@ -19,13 +26,13 @@
 
     <!-- -------Last name input--------- -->
     <div>
-      <p>Last Name: {{ lastname }}</p>
+      
     </div>
     <div>
       <BaseInput
         label="Last Name"
         type="text"
-        name="lname"
+        name="last_name"
         placeholder="Last name"
         required
       />
@@ -38,11 +45,13 @@
     <div>
       <BaseInput
         label="Email"
+        id="email"
         type="email"
         name="email"
         placeholder="Email"
         required
-        value="alex@gmail.com"
+        :value="email"
+
       />
     </div>
 
@@ -240,6 +249,14 @@ import FormCardAdress from "./addition/FormCardAdress.vue";
 import TheButton from "./addition/TheButton.vue";
 
 export default {
+
+  // setup(){
+  //     const form = ref({
+  //       firstname:'',
+  //       lastname:'',
+  //       emai:''
+  //     })
+  
   components: {
     HelpText,
     ExclamationCircleIcon,
@@ -307,28 +324,6 @@ export default {
         this.password.length > 5
           ? ""
           : "Your password must be less than 6 characters.";
-    },
-  },
-
-  props: {
-    id: {
-      type: String,
-    },
-    label: {
-      type: String,
-    },
-    hideLabel: {
-      type: Boolean,
-    },
-    type: {
-      required: true,
-      type: String,
-    },
-    helpText: {
-      type: String,
-    },
-    placeholder: {
-      type: String,
     },
   },
 };
