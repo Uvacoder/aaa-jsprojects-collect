@@ -3,91 +3,89 @@
     @submit.prevent="handleSubmit"
     class="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-8"
   >
-    <!-- -------First name input--------- -->
-    <div>   
-    </div>
-    <label for="firstName">First name</label>
-     <div>
+    <!-- -------Selected menu-------- -->
+    <div>
+      <p>Selected options here: {{ selected }}</p>
     </div>
     <div>
-      <input 
-      type="text"
-      v-model="firsname"
-      placeholder="First Name">
-      
-      <BaseInput
-        label="First Name"
-        type="text"
-        name="First_name"
-        placeholder="First name"
-        required
-         />
+      <v-select name="country" :options="options" @select="optionSelect" />
     </div>
 
-    <!-- -------Last name input--------- -->
+    <!-- -------First name-------- -->
+    <div>First Name: {{ firstname }}</div>
     <div>
-      
+      <label for="firstname" class="block text-sm font-medium text-gray-700"
+        >First Name</label
+      >
+      <div class="mt-1">
+        <input
+          type="text"
+          name="firstname"
+          id="firstname"
+          :class="inputClass"
+          placeholder="Your First Name"
+          v-model="firstname"
+        />
+      </div>
     </div>
+
+    <!-- -------Last name-------- -->
+    <div>Last Name: {{ lastname }}</div>
     <div>
-      <BaseInput
-        label="Last Name"
-        type="text"
-        name="last_name"
-        placeholder="Last name"
-        required
-      />
+      <label for="lastname" class="block text-sm font-medium text-gray-700"
+        >Last name</label
+      >
+      <div class="mt-1">
+        <input
+          type="text"
+          name="lastname"
+          id="lastname"
+          :class="inputClass"
+          placeholder="Your Last Name"
+          v-model="lastname"
+        />
+      </div>
+    </div>
+
+    <!-- -------Password-------- -->
+    <div>Password: {{ password }}</div>
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700"
+        >Password</label
+      >
+      <div class="mt-1">
+        <input
+          type="password"
+          name="password"
+          id="password"
+          :class="inputClass"
+          placeholder="Your password"
+          v-model="password"
+        />
+        <div v-if="passwordError" class="error text-red-600">
+        {{ passwordError }}
+      </div>
+      </div>
     </div>
 
     <!-- -------Email input--------- -->
     <div>
       <p>Email: {{ email }}</p>
     </div>
-    <div>
-      <BaseInput
-        label="Email"
-        id="email"
+    <div class="mt-1">
+      <label for="email" class="block text-sm font-medium text-gray-700"
+        >Email</label
+      >
+      <input
         type="email"
         name="email"
-        placeholder="Email"
-        required
-        :value="email"
-
-      />
-    </div>
-
-    <!-- -------Password input--------- -->
-    <div>
-      <p>Password: {{ password }}</p>
-    </div>
-    <div>
-      <BaseInput
-        label="Password"
-        type="password"
-        name="password"
-        placeholder="Password"
-        required
-      />
-    </div>
-
-    <!-- -------Password error input--------- -->
-    <div>
-      <!-- <p>Password Error: {{ passworderror }}</p> -->
-    </div>
-    <div>
-      <input
-        type="password"
-        name="passworderror"
-        id="passworderror"
-        required
-        v-model="password"
-        placeholder="password"
+        id="email"
         :class="inputClass"
+        placeholder="Your email"
+        v-model="email"
       />
-
-      <div v-if="passwordError" class="error text-red-600">
-        {{ passwordError }}
-      </div>
     </div>
+
 
     <!-- -------Text Area--------- -->
     <div>
@@ -247,16 +245,9 @@ import FormNumber from "./addition/FormNumber.vue";
 import FormCurrency from "./addition/FormCurrency.vue";
 import FormCardAdress from "./addition/FormCardAdress.vue";
 import TheButton from "./addition/TheButton.vue";
+import vSelect from "./addition/vSelect.vue";
 
 export default {
-
-  // setup(){
-  //     const form = ref({
-  //       firstname:'',
-  //       lastname:'',
-  //       emai:''
-  //     })
-  
   components: {
     HelpText,
     ExclamationCircleIcon,
@@ -266,10 +257,25 @@ export default {
     FormCardAdress,
     TheButton,
     BaseInput,
+    vSelect,
+  },
+  props:{
+    value:{
+      type: String,
+      default:""
+    }
   },
 
   data() {
     return {
+      options: [
+        { code: "UA", value: 1 },
+        { name: "Ukraine", value: 2 },
+        { code: "UK", value: 3 },
+        { name: "Poland", value: 4 },
+      ],
+      selected: "",
+
       firstname: "",
       lastname: "",
       email: "",
@@ -313,6 +319,9 @@ export default {
   },
 
   methods: {
+    optionSelect(option) {
+      this.selected = option.name;
+    },
     handleSubmit() {
       console.log("firstname: ", this.firstname);
       console.log("lastname: ", this.lastname);
