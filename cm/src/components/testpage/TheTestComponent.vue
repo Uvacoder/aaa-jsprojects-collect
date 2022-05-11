@@ -1,20 +1,20 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-8">
+  <form
+    @submit.prevent="handleSubmit"
+    class="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-8"
+  >
     <!-- -------First name input--------- -->
     <div>
-      <p>First Name: {{ firstname }}</p>
+      
     </div>
     <div>
-      <label>First name</label>
-      <input
-        name="FirstName"
-        id="fname"
+      <BaseInput
+        label="First Name"
         type="text"
+        name="fname"
+        placeholder="First name"
         required
-        v-model="firstname"
-        :class="inputClass"
-        placeholder="First Name"
-      />
+         />
     </div>
 
     <!-- -------Last name input--------- -->
@@ -22,15 +22,12 @@
       <p>Last Name: {{ lastname }}</p>
     </div>
     <div>
-      <label>Last name</label>
-      <input
-        name="LasttName"
-        id="lname"
+      <BaseInput
+        label="Last Name"
         type="text"
+        name="lname"
+        placeholder="Last name"
         required
-        v-model="lastname"
-        :class="inputClass"
-        placeholder="Last Name"
       />
     </div>
 
@@ -39,15 +36,13 @@
       <p>Email: {{ email }}</p>
     </div>
     <div>
-      <label>Email</label>
-      <input
-        name="email"
-        id="email"
+      <BaseInput
+        label="Email"
         type="email"
-        required
-        v-model="email"
-        :class="inputClass"
+        name="email"
         placeholder="Email"
+        required
+        value="alex@gmail.com"
       />
     </div>
 
@@ -56,15 +51,12 @@
       <p>Password: {{ password }}</p>
     </div>
     <div>
-      <label>Password</label>
-      <input
-        name="password"
-        id="password"
+      <BaseInput
+        label="Password"
         type="password"
-        required
-        v-model="password"
-        :class="inputClass"
+        name="password"
         placeholder="Password"
+        required
       />
     </div>
 
@@ -72,19 +64,22 @@
     <div>
       <!-- <p>Password Error: {{ passworderror }}</p> -->
     </div>
-      <div>
-        <input 
-        type="password" 
+    <div>
+      <input
+        type="password"
         name="passworderror"
         id="passworderror"
         required
         v-model="password"
         placeholder="password"
-        :class="inputClass">
-        
-        <div v-if="passwordError" class="error text-red-600 ">{{ passwordError }}</div>
+        :class="inputClass"
+      />
+
+      <div v-if="passwordError" class="error text-red-600">
+        {{ passwordError }}
       </div>
-    
+    </div>
+
     <!-- -------Text Area--------- -->
     <div>
       <p>Text Area: {{ textarea }}</p>
@@ -235,12 +230,14 @@
 </template>
 
 <script>
+import BaseInput from "./addition/BaseInput.vue";
 import HelpText from "./addition/HeplText.vue";
 import { ExclamationCircleIcon } from "@heroicons/vue/solid";
 import FormSearch from "./addition/FormSearch.vue";
 import FormNumber from "./addition/FormNumber.vue";
 import FormCurrency from "./addition/FormCurrency.vue";
 import FormCardAdress from "./addition/FormCardAdress.vue";
+import TheButton from "./addition/TheButton.vue";
 
 export default {
   components: {
@@ -250,11 +247,13 @@ export default {
     FormNumber,
     FormCurrency,
     FormCardAdress,
+    TheButton,
+    BaseInput,
   },
 
   data() {
     return {
-      firstname: "Alex",
+      firstname: "",
       lastname: "",
       email: "",
       password: "",
@@ -293,7 +292,7 @@ export default {
     },
     regionClass: function () {
       return "";
-    }
+    },
   },
 
   methods: {
@@ -304,7 +303,10 @@ export default {
       console.log("password: ", this.password);
       console.log("role: ", this.role);
       console.log("names: ", this.names);
-      this.passwordError = this.password.length > 5 ? '' : 'Your password must be less than 6 characters.'
+      this.passwordError =
+        this.password.length > 5
+          ? ""
+          : "Your password must be less than 6 characters.";
     },
   },
 
