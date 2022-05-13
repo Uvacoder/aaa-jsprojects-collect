@@ -1,5 +1,5 @@
 <template>
-  <!-- <nav class="flex justify-center flex-wrap pt-2 border-b-2 pb-4">
+  <nav class="flex justify-center flex-wrap pt-2 border-b-2 pb-4">
      <div class="button">
       <router-link to="/testpage">Main Input</router-link>
     </div>
@@ -58,13 +58,11 @@
       <router-link to="/modals">Modals Page</router-link>
     </div>
     <div class="button">
-      <router-link to="/dropdowns">Dropdown</router-link>
+      <router-link to="/main_input">Main_Input_Class</router-link>
     </div>
-    <div class="button">
-      <button @click="$router.push('/newpage')">New Page</button>
-    </div>
+   
   
-  </nav> -->
+  </nav>
   
   <router-view></router-view>
 

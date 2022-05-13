@@ -19,8 +19,8 @@ import TestPage from './components/TestPage.vue';
 import CustomerPage from './components/CustomerPage.vue';
 import ThePagination from './components/ThePagination.vue';
 import TheModals from './components/TheModals.vue';
-import TheDropdown from './components/TheDropdown.vue';
-import TheNewPage from './TheNewPage.vue';
+import Main_Input_Class from './components/Main_Input_Class.vue';
+
 
 
 export default createRouter({
@@ -107,12 +107,8 @@ export default createRouter({
             component: TheModals
         },
         {
-            path: '/dropdowns',
-            component: TheDropdown
-        },
-        {
-            path: '/newpage',
-            component: TheNewPage
+            path: '/main_input',
+            component: Main_Input_Class
         }
 
 
