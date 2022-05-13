@@ -71,7 +71,9 @@ export default {
         { key: "ca", value: "Canada" },
       ],
       selectedCountries: "",
+      errors: [],
     };
+    
   },
 
   components: {

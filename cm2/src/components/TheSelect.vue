@@ -1,9 +1,9 @@
 <template>
   <div>
     <label for="" :class="myLabel">{{ label }}</label>
-    <!-- <div v-if="readonly">
+    <div v-if="readonly">
       <p>{{ options.find((option) => option.key == selectedValue).value }}</p>
-    </div> -->
+    </div>
     <select
       name="my-select"
       id="select"
@@ -17,9 +17,9 @@
       </option>
     </select>
 
-    <!-- <div v-if="errors.containsKey(name)" class="text-warning">
+    <div v-if="errors.containsKey(name)" class="text-warning">
       {{ errors[name] }}
-    </div> -->
+    </div>
 
     <div v-if="helpText">
       <small :class="myhelpText">{{ helpText }}</small>
