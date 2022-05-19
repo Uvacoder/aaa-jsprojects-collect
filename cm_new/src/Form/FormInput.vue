@@ -2,27 +2,35 @@
   <div>
     <FormLabel v-if="label" :id="id" :label="label" :hideLabel="hideLabel">
     </FormLabel>
-    <div class="mt-1">
-      <input
+    <Form>
+      <Field
         :type="type"
-        :name="id"
+        :name="name"
         :id="id"
         :class="inputClass"
-        :placeholder="yourexample"
+        :placeholder="placeholder"
+        :value="values"
+        :rules="isRequired"
       />
-    </div>
+    </Form>
+    <ErrorMessage :class="classError" name="name" />
+    <FormHelpText />
   </div>
 </template>
 <script>
 import FormHelpText from "./Partials/FormHelpText.vue";
 import FormLabel from "./Partials/FormLabel.vue";
+import { Field, Form, ErrorMessage } from "vee-validate";
 
 export default {
   components: {
     FormLabel,
     FormHelpText,
+    Field,
+    Form,
+    ErrorMessage,
   },
-  props: {
+  props:  {
     id: {
       type: String,
     },
@@ -43,6 +51,7 @@ export default {
       type: String,
       required: true
     },
+   
  
   },
   data() {
@@ -59,12 +68,23 @@ export default {
     inputClass: function () {
       return "shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md";
     },
+    classError: function () {
+      return "p-4 text-sm text-red-600";
+    },
     labelClass: function () {
       if (this.hideLabel) {
         return "sr-only";
       } else {
         return "block text-sm font-medium text-gray-700";
       }
+    },
+  },
+  methods: {
+    isRequired(value) {
+      if (value && value.trim()) {
+        return true;
+      }
+      return "This is required";
     },
   },
 };

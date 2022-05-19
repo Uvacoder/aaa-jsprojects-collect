@@ -14,9 +14,11 @@
         "@vue-hero-icons/solid": "^1.7.2",
         "@vuelidate/core": "^2.0.0-alpha.41",
         "@vuelidate/validators": "^2.0.0-alpha.29",
+        "vee-validate": "^4.5.11",
         "vue": "^3.2.25",
         "vue-router": "^4.0.14",
-        "vue-select": "^4.0.0-beta.3"
+        "vue-select": "^4.0.0-beta.3",
+        "yup": "^0.32.11"
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^2.3.0",
