@@ -84,7 +84,7 @@ export default {
       if (value && value.trim()) {
         return true;
       }
-      return "This is required";
+      return "this is required";
     },
   },
 };

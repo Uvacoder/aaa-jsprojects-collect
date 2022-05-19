@@ -4,16 +4,15 @@
       <div></div>
       <label for="" :class="myLabel">{{ label }}</label>
       <Field
-        :type="type"
-        :placeholder="placeholder"
-        name="my-input"
-        :rules="isRequired"
         :class="inputClass"
-        id="input"
+        name="email"
+        type="email"
+        :rules="validateEmail"
+        :placeholder="placeholder"
         :value="modelValue"
       />
-      
-      <ErrorMessage :class="classError" name="my-input" />
+      <ErrorMessage :class="classError" name="email"  />
+
       <div v-if="helpText">
         <small :class="myhelpText">{{ helpText }}</small>
       </div>
@@ -23,14 +22,29 @@
 <script>
 import { Field, Form, ErrorMessage } from "vee-validate";
 
-
 export default {
   components: {
     Field,
     Form,
     ErrorMessage,
   },
-
+  methods: {
+    validateEmail(value) {
+      if (!value) {
+        return "This field is required";
+      }
+      const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+      if (!regex.test(value)) {
+        return "This field must be a valid email";
+      }
+      return true;
+    },
+  },
+  //   data() {
+  //     return {
+  //       emailRules: yup.string().required().email(),
+  //     };
+  //   },
   props: {
     name: "",
     helpText: "",
@@ -55,14 +69,7 @@ export default {
       default: " ",
     },
   },
-  methods: {
-    isRequired(value) {
-      if (value && value.trim()) {
-        return true;
-      }
-      return "This is required";
-    },
-  },
+
   computed: {
     classError: function () {
       return "pt-4 text-sm text-red-600";
