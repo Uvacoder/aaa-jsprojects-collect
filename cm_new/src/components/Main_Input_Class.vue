@@ -14,7 +14,7 @@
         :options="countries"
         label="Countries"
         placeholder="Select Countries"
-        :selectedValue="ua"
+        selectedValue="ua"
         :name="'country_code'"
         :required="true"
         :readonly="true"
@@ -39,7 +39,7 @@
         placeholder="Your first name"
         label="First Name"
         :required="true"
-        :selectedValue="Alex"
+        selectedValue="Alex"
         v-model="selectedName"
         :helpText="false"
       />
@@ -57,7 +57,7 @@
         placeholder="Your last name"
         label="Last Name"
         :required="true"
-        :selectedValue="Jordan"
+        selectedValue="Jordan"
         v-model="selectedName"
         :helpText="'Write your last name'"
       />
@@ -102,7 +102,7 @@
       />
     </div>
 
-    <div><h1 class="pt-12">The "Text Area" component ---></h1></div>
+    <div><h1 class="pt-12">The "Checkbox" component ---></h1></div>
 
     <!----------The 'Radio' Component---------->
 
@@ -111,6 +111,8 @@
         
       />
     </div>
+     
+
 
   </div>
 </template>

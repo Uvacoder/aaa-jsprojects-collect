@@ -11,6 +11,7 @@
         :class="inputClass"
         id="input"
         :value="modelValue"
+        :readonly="boolean"
       />
       
       <ErrorMessage :class="classError" name="my-input" />
@@ -29,6 +30,7 @@ export default {
     Field,
     Form,
     ErrorMessage,
+    
   },
 
   props: {
@@ -41,7 +43,9 @@ export default {
     },
     id: {
       type: String,
+      default: undefined
     },
+  
     placeholder: {
       type: String,
       required: true,
