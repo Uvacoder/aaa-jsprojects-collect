@@ -10,6 +10,6 @@ How to run?
 
 1. Download the entire folder or make a copy.
 2. Enter in console: npm install
-3. Then npm run dev
+3. Then: npm run dev
 
 Link: http://localhost:3000/#/
